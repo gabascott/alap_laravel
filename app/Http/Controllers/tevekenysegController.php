@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class tevekenysegController extends Controller
 {
+    public function index(){
+        $tevekenysegek = response()->json(tevekenyseg::all());
+        return $tevekenysegek;
+    }
+    
     public function tevekenyseg_listaz(){
         $tevekenyseg = DB::table('tevekenyseg')
         ->select('tevekenyseg_id', 'tevekenyseg_nev', 'pontszam')

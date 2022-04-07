@@ -15,7 +15,8 @@
         <!-- scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="{{ url('js/ajax.js') }}"></script>
-        <script src="{{ url('js/script.js') }}"></script>
+        <script src="{{ url('js/bejegyzesScript.js') }}"></script>
+        <script src="{{ url('js/bejegyzes.js') }}"></script>
         <script src="{{ url('js/tevekenyseg.js') }}"></script>
 
         <style>
@@ -33,6 +34,7 @@
                         <option value="" id=""></option>
                     </select>
                     <select name="" id="">
+                        <option value="" id="" disabled selected>Válassz tevékenységet!</option>
                         <option value="" id=""></option>
                     </select>
                     <input type="submit" value="Küld">
