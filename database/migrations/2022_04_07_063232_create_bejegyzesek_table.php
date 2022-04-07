@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateBejegyzesekTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+        Schema::create('bejegyzesek', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('tevekenyseg_id');
+            $table->foreign('tevekenyseg_id')->references('tevekenyseg_id')->on('tevekenyseg');
             $table->char('osztaly_id', 10);
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('allapot', 20);
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('bejegyzesek');
     }
 }

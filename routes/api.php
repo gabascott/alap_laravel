@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\bejegyzesekController;
+use App\Http\Controllers\tevekenysegController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+//Route::get('modell', [ConfiguratorController::class, 'modell_rendez']);
+Route::get('tevekenyseg', [tevekenysegController::class, 'tevekenyseg_listaz']);
+Route::get('bejegyzesek', [bejegyzesekController::class, 'bejegyzesek_listaz']);
